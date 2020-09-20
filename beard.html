@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facial Hair Experiment</title>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167430586-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-167430586-1");</script>
+<style type="text/css">
+#video, canvas, #image{
+	border: 0.5px solid grey;
+}
+#video, canvas{
+	width: 800px;
+	height: 600px;
+}
+canvas, #image{
+	position: absolute;
+}
+body, button, input, select{
+	font-family: 'Manrope', sans-serif;
+}
+</style>
+</head>
+<body>
+	Were you made for facial hair? Well there's only one way to find out:
+	<button onclick="start()" id="webcamButton">Try it with your webcam</button> (note: most browsers don't support the use of the webcam over HTTP. If the webcam doesn't work, try <a href="https://i8sumpi.github.io/faceDetect/beard.html">here</a>.)
+	<br>
+	Or, upload an image: <input type="file" id="upload" accept="image/*"><br>
+	<select id="type">
+		<option>Classic Full Beard</option>
+		<option>Goatee and Mustache</option>
+		<option>Just Mustache</option>
+		<option>Mutton Chops</option>
+		<option>Imperial</option>
+		<option>Bushy</option>
+	</select>
+	<br>
+
+	<img id="image">
+	<canvas id="canvas" width="400" height="300"></canvas>
+	<canvas id="invisCanvas" width="400" height="300"></canvas>
+	<video autoplay="true" id="video"></video>
+
+	<br>
+	<a href="#" download="photo-with-beard.png" class="button" onclick="downloadPic()" id="downloadPic">Download Photo With Beard</a>
+
+
+	<script type="text/javascript"> function el(id){ return document.getElementById(id); } </script>
+	<script type="text/javascript" src="face-api.min.js"></script>
+	<script type="text/javascript" src="beard.js"></script>
+</body>
+</html>
